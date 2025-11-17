@@ -86,6 +86,7 @@ $ff-poppins: 'Poppins', sans-serif;
 
 /* font-size */
 $scale: 1;
+$fs-0: 50px * $scale;
 $fs-1: 24px * $scale;
 $fs-2: 18px * $scale;
 $fs-3: 17px * $scale;
@@ -117,8 +118,9 @@ $border-radius3: 30px;
 /* transition */
 $transition-1: 0.1s ease;
 $transition-2: 0.5s ease-in-out;
-$transition-3: 0.2s l;
 
+
+$contact-gap: 30px;
 
 
 /*-----------------------------------*\
@@ -193,10 +195,8 @@ article {
     border: 1px solid $jet;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
-    color: $cheerio-blue;
     box-shadow: $shadow-1;
-    
+    font-size: $fs-1;
     &::before {
         content: "";
         position: absolute;
@@ -205,7 +205,6 @@ article {
         border-radius: inherit;
         z-index: -1;
     }
-    ion-icon { $ionicon-stroke-width: 35px; }
 
     .tool-tip-text {
         visibility: hidden;
@@ -336,6 +335,10 @@ main {
     overflow: hidden;
     transition: $transition-2;
     &.active { max-height: 405px; }
+    ion-icon {
+        font-size: $fs-1;
+        color: $cheerio-blue
+    }
 }
 .sidebar-info {
     position: relative;
@@ -412,13 +415,13 @@ main {
 .contacts-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: $contact-gap/2;
 }
 .contact-item {
     min-width: 100%;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: $contact-gap/2;
 }
 .contact-info {
     max-width: calc(100% - 46px);
@@ -439,14 +442,16 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
     padding-bottom: 4px;
     padding-left: 7px;
-}
-.social-item .social-link {
-    color: $light-gray-70;
-    font-size: 18px;
-    &:hover { color: $light-gray; }
+    gap: $contact-gap;
+    .social-item {
+        .social-link {
+            color: $light-gray-70;
+            font-size: 18px;
+            &:hover { color: $light-gray; }
+        }
+    }
 }
 
 /*-----------------------------------*\
@@ -1403,7 +1408,7 @@ textarea.form-input {
      */
     .contacts-list {
         grid-template-columns: 1fr 1fr;
-        gap: 30px 15px;
+        gap: $contact-gap 15px;
     }
 
     /**

@@ -116,9 +116,8 @@ article {
   border: 1px solid hsl(0, 0%, 22%);
   justify-content: center;
   align-items: center;
-  font-size: 16px;
-  color: #6190ff;
   box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  font-size: 24px;
 }
 .icon-box::before {
   content: "";
@@ -263,6 +262,10 @@ main {
 .sidebar.active {
   max-height: 405px;
 }
+.sidebar ion-icon {
+  font-size: 24px;
+  color: #6190ff;
+}
 
 .sidebar-info {
   position: relative;
@@ -343,14 +346,14 @@ main {
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 15px;
 }
 
 .contact-item {
   min-width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
 }
 
 .contact-info {
@@ -376,16 +379,15 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
   padding-bottom: 4px;
   padding-left: 7px;
+  gap: 30px;
 }
-
-.social-item .social-link {
+.social-list .social-item .social-link {
   color: hsla(0, 0%, 84%, 0.7);
   font-size: 18px;
 }
-.social-item .social-link:hover {
+.social-list .social-item .social-link:hover {
   color: hsl(0, 0%, 84%);
 }
 
