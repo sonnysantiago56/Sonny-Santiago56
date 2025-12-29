@@ -24,33 +24,33 @@
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
     hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
+    to bottom right,
+    hsla(240, 1%, 18%, 0.251) 0%,
     hsla(240, 2%, 11%, 0) 100%
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
+    135deg,
+    hsla(45, 100%, 71%, 0.251) 0%,
     hsla(35, 100%, 68%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
+    to right,
+    hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
 
@@ -95,7 +95,7 @@
   /**
    * shadow
    */
-  
+
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
@@ -509,7 +509,7 @@ main {
 
 
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
@@ -557,7 +557,7 @@ main {
 
 
 /**
- * #testimonials 
+ * #testimonials
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -723,7 +723,7 @@ main {
 
 
 /**
- * #clients 
+ * #clients
  */
 
 .clients { margin-bottom: 15px; }
@@ -768,7 +768,7 @@ main {
 
 
 /**
- * education and experience 
+ * education and experience
  */
 
 .timeline { margin-bottom: 30px; }
@@ -831,7 +831,7 @@ main {
 
 
 /**
- * skills 
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -865,6 +865,17 @@ main {
   background: var(--text-gradient-yellow);
   height: 100%;
   border-radius: inherit;
+}
+
+.resume-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.resume-download{
+    text-decoration: none;
 }
 
 
@@ -1244,7 +1255,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #PORTFOLIO, BLOG
    */
 
   .project-img,
@@ -1295,14 +1306,31 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .article-title {
-    font-weight: var(--fw-600);
-    padding-bottom: 15px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
   }
 
-  .article-title::after {
-    width: 40px;
-    height: 5px;
-  }
+   .article-title .icon-box {
+     display: flex;
+     align-items: center;
+    }
+
+   .article-title {
+     position: relative;
+     padding-bottom: 7px;
+   }
+
+   .article-title::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 30px;
+     height: 3px;
+     background: var(--text-gradient-yellow);
+     border-radius: 3px;
+   }
 
   .icon-box {
     width: 48px;
@@ -1310,8 +1338,90 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 12px;
     font-size: 18px;
   }
+  .tag-box {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px; /* 药丸形状 */
+    font-size: 14px;
+    color: var(--orange-yellow-crayola);
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+    transition: var(--transition-1);
+  }
+
+  .tag-box::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--eerie-black-1);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .tag-box ion-icon {
+    -ionicon-stroke-width: 35px;
+    font-size: 16px;
+  }
+
+  .tag-box:hover {
+    background: var(--bg-gradient-yellow-1);
+    transform: translateY(-2px);
+  }
+
+  .tag-box:hover::before {
+    background: var(--bg-gradient-yellow-2);
+  }
 
 
+  .tag-box.small {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 16px;
+  }
+
+  .tag-box.large {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 24px;
+  }
+
+
+  .tag-box.primary {
+    color: var(--orange-yellow-crayola);
+  }
+
+  .tag-box.secondary {
+    color: var(--light-gray);
+  }
+
+  .tag-box.accent {
+    color: var(--vegas-gold);
+  }
+
+
+  .tag-box.icon-only {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 18px;
+  }
+
+  .tag-box.icon-only.small {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+  }
+
+  .tag-box.icon-only.large {
+    width: 44px;
+    eight: 44px;
+    border-radius: 22px;
+  }
 
   /**
    * #MAIN
@@ -1497,6 +1607,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 8px;
     left: -43px;
   }
+  .timeline-text strong{ font-weight: 700; }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
 
@@ -1638,7 +1749,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
 }
 
 
@@ -1681,7 +1792,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * MAIN 
+   * MAIN
    */
 
   main { margin-bottom: 60px; }
