@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Sen Zhang Personal Portfolio</title>
 
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
   <!--
     - custom css link
@@ -42,7 +42,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/PersonalPicture.jpg" alt="Richard hanrick" width="80">
         </figure>
 
         <div class="info-content">
@@ -193,14 +193,6 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
 
@@ -224,20 +216,87 @@
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+              Hello! I am currently a senior student in Information and Computing Science at Xi'an Jiaotong Liverpool University.
           </p>
 
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+              I have worked as a research assistant at X-CHI Lab and Spatial Interaction and Immersive Visualization Lab at Xi'an Jiaotong Liverpool University,
+              as well as Computational Media and Arts Thrust at The Hong Kong University of Science and Technology (Guangzhou).
+              My research focuses on the fields of human-computer interaction and virtual reality.
+          </p>
+          <p>
+              I have shared my study notes and some of my computer related experiences on CSDN.
+              You can find me through the link on the website.
+              I am passionate about helping everyone solve various computer related problems.
+              If you have any related questions, you can contact me through the contact information on the website.
+          </p>
+          <p>
+              I am also a game enthusiast and game developer.
+              I have been playing Overwatch recently.
+              If you want to play games with me, you can contact me through the Steam link on the website.
+              At the same time, the new game Kong Fu Card developed by my company is going to be released, and I hope everyone can support it.
+              I sometimes live stream playing games on Bilibili, and if you have time, you can also come and support me.
           </p>
         </section>
 
+          <section class="projects">
+              <h3 class="h3 service-title">Portfolio</h3>
+              <div class="filter-select-box">
+
+                  <button class="filter-select" data-select>
+
+                      <div class="select-value" data-selecct-value>Select category</div>
+
+                      <div class="select-icon">
+                          <ion-icon name="chevron-down"></ion-icon>
+                      </div>
+
+                  </button>
+
+                  <ul class="select-list">
+
+                      <li class="select-item">
+                          <button data-select-item>All</button>
+                      </li>
+
+                      <li class="select-item">
+                          <button data-select-item>Game</button>
+                      </li>
+
+                      <li class="select-item">
+                          <button data-select-item>VR</button>
+                      </li>
+
+                      <li class="select-item">
+                          <button data-select-item>Research</button>
+                      </li>
+
+                  </ul>
+
+              </div>
+              <ul class="project-list">
+                  <li class="project-item  active" data-filter-item data-category="Game">
+                      <a href="./Portfolio/Mei(Volcanologist)/slides.html" target="_blank">
+                      <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                  <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./Portfolio/Mei(Volcanologist)/Mei(Cover).jpg" alt="Mei(Volcanologist)" loading="lazy">
+                          </figure>
+                      </a>
+
+                      <h3 class="project-title">Mei(Volcanologist)</h3>
+                      <p class="project-category">Game</p>
+
+                      <div class="social-links">
+                          <a href="./Portfolio/Mei(Volcanologist)/video.html" class="social-link" target="_blank" rel="noopener noreferrer">
+                              <ion-icon name="play-circle-outline"></ion-icon>
+                          </a>
+                      </div>
+
+                  </li>
+              </ul>
+          </section>
 
         <!--
           - service
@@ -252,15 +311,15 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/student.svg
+                " alt="Student icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">Senior student</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                    I am a senior student majoring in Information and Computing Science.
                 </p>
               </div>
 
@@ -269,14 +328,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/research-icon.svg" alt="Research icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">Research assistant</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                    Conducting researches in two human-computer interaction laboratories.
                 </p>
               </div>
 
@@ -285,14 +344,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/programmer.svg" alt="Programmer icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title">Game developer</h4>
 
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                    Developing a card game for a game studio. This game will be launched in 2026.
                 </p>
               </div>
 
@@ -301,14 +360,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <img src="./assets/images/player.svg" alt="Player icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
+                <h4 class="h4 service-item-title">Game enthusiast</h4>
 
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  I like playing all kinds of games. Sometimes I will live stream playing games.
                 </p>
               </div>
 
@@ -316,206 +375,45 @@
 
           </ul>
 
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
+            <div class="skills-section">
+                <div class="skills-category">
+                    <div class="skills-tags">
+                        <div class="tag-box">
+                            <span>C#</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>C++</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Java</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Python</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>SQL</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Swift</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Unity</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Blender</span>
+                        </div>
+                        <div class="tag-box">
+                            <span>Latex</span>
+                        </div>
+                    </div>
                 </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
             </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
         </section>
+
+
 
       </article>
 
@@ -529,59 +427,272 @@
 
       <article class="resume" data-page="resume">
 
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
+          <header>
+              <h2 class="h2 article-title">Resume
+                  <a href="./SenZhang_Resume.pdf"
+                     download="SenZhang_Resume.pdf"
+                     class="tag-box large"
+                     aria-label="Download resume PDF">
+                      <ion-icon name="cloud-download-outline"></ion-icon>
+                  </a>
+              </h2>
+          </header>
+
+
+          <section class="timeline">
+
+              <div class="title-wrapper">
+                <div class="icon-box">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3">Education</h3>
+              </div>
+
+              <ol class="timeline-list">
+                <li class="timeline-item">
+
+                  <h4 class="h4 timeline-item-title">Xi'an Jiaotong-Liverpool University</h4>
+
+                  <span>2022 - 2026</span>
+
+                  <p class="timeline-text">
+                      BSc Information and Computing Science, First Class (Honors expected), GPA: 3.75
+                  </p>
+                </li>
+              </ol>
+
+        </section>
+        <section class="timeline">
+
+            <div class="title-wrapper">
+                <div class="icon-box">
+                    <ion-icon name="book-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3">Publication</h3>
+            </div>
+
+            <ol class="timeline-list">
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">
+                        <a href="https://www.chinavis.org/2025/zh/poster/"
+                           class="paper-title-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            FrameBeats: A prototype that compose the sound effects for input visuals
+                        </a>
+                        <a href="./papers/ChinaVis2025_Poster_Article.pdf"
+                           download="ChinaVis2025_Poster_SenZhang_FrameBeats：A prototype that compose the sound effects for input visuals_2Page.pdf"
+                           class="tag-box small paper-download"
+                           aria-label="Download paper PDF">
+                            <ion-icon name="cloud-download-outline"></ion-icon>
+                        </a>
+                    </h4>
+
+                    <span>ChinaVis 2025 (Poster)</span>
+
+                    <p class="timeline-text">
+                        Propose a prototype that can recognize segments based on video input and generate corresponding sound effects.
+                    </p>
+                    <p class="timeline-text">
+                        <strong>Sen Zhang</strong>, Chengyang Song and Lingyun Yu
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> Below 30%
+                    </p>
+
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11204728"
+                           class="paper-title-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Reevaluating the Gaze Cursor in Virtual Reality: A Comparative Analysis of Cursor Visibility, Confirmation Mechanisms, and Task Paradigms
+                        </a>
+                        <a href="./papers/Gaze Cursor.pdf"
+                           download="Reevaluating_the_Gaze_Cursor_in_Virtual_Reality_A_Comparative_Analysis_of_Cursor_Visibility_Confirmation_Mechanisms_and_Task_Paradigms.pdf"
+                           class="tag-box small paper-download"
+                           aria-label="Download paper PDF">
+                            <ion-icon name="cloud-download-outline"></ion-icon>
+                        </a>
+                    </h4>
+
+
+                    <span>IEEE Transactions on Visualization and Computer Graphics</span>
+
+                    <p class="timeline-text">
+                        Exploring the influence of cursor design in eye tracking interaction.
+                    </p>
+                    <p class="timeline-text">
+                        Yushi Wei; Rongkai Shi; <strong>Sen Zhang</strong>; Anil Ufuk Batmaz; Pan Hui; Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> Below 18%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">RayFlex: Inducing Weight Perception through Raycast Pseudo-Haptics in Virtual Reality</h4>
+
+                    <span>IEEE VR 2026</span>
+
+                    <p class="timeline-text">
+                        Design a system to help users perceive the weight of objects in virtual reality.
+                    </p>
+                    <p class="timeline-text">
+                        Yushi Wei, <strong>Sen Zhang</strong>, Rongkai Shi, Simon Fong, Pan Hui, and Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> About 21%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">D-Model: Understanding the Effect of Expected Delays in Moving Target Selection in VR</h4>
+
+                    <span>International Journal of Human–Computer Interaction (Under Review)</span>
+
+                    <p class="timeline-text">
+                        Investigate how intentionally introduced temporal delays effect the performance and behavior of users when selecting moving targets in virtual reality.
+                    </p>
+                    <p class="timeline-text">
+                        Yushi Wei, <strong>Sen Zhang</strong>, Rongkai Shi, Huawei Tu, Jin Huang, Pan Hui, and Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> 23%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">How Should the Real World Look in VR? Investigating Real vs. Digital Views for Interaction</h4>
+
+                    <span>IEEE Transactions on Visualization and Computer Graphics (Under Review)</span>
+
+                    <p class="timeline-text">
+                        Exploring whether using Passthrough Mode with the same artistic style as the application can enhance user immersion and reduce the discomfort of traditional switching to Passthrough mode.
+                    </p>
+                    <p class="timeline-text">
+                        Zixuan Guo, Jia Zhang, <strong>Sen Zhang</strong>, Tingjie Wan, Yue Li, BoYu Gao, Xubo Yang, and Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> Below 18%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">Optimal Raycast Selection Feedback in Virtual Reality for Older Adults: A Design and Analysis Study</h4>
+
+                    <span>IEEE Transactions on Visualization and Computer Graphics (Under Review)</span>
+
+                    <p class="timeline-text">
+                        Propose and evaluate seven feedback techniques, including three uni-modal and four multimodal approaches for selection feedback in virtual reality for older adults
+                    </p>
+                    <p class="timeline-text">
+                        Yushi Wei, <strong>Sen Zhang</strong>, Zeju Zheng, Rongkai Shi, Mingming Fan, and Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> Below 18%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">Latency Governs Efficiency, Representation Modulates Experience: Detachment Testing of Latency and Effector Representation in VR Teleoperation</h4>
+
+                    <span>IEEE VR 2026(Under Review)</span>
+
+                    <p class="timeline-text">
+                        Investigate the influence of delay and the effector representation in virtual reality teleoperation..
+                    </p>
+                    <p class="timeline-text">
+                        Fangtao Zhao, <strong>Sen Zhang</strong>, and Hai-Ning Liang
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> About 21%
+                    </p>
+                </li>
+                <li class="timeline-item">
+
+                    <h4 class="h4 timeline-item-title">Assessing Arrival Orientation Control for Point & Select Teleportation in Complex Virtual Environments</h4>
+
+                    <span>IEEE VR 2026(Under Review)</span>
+
+                    <p class="timeline-text">
+                        Assessing Arrival Orientation Control for Point & Select Teleportation in Complex Virtual Environments
+                    </p>
+                    <p class="timeline-text">
+                        Tingjie Wan, Yunxin Xu, Jia Zhang, <strong>Sen Zhang</strong>, Jianbin Song, Zixuan Guo, Lingyun Yu, Hai-Ning Liang, and BoYu Gao
+                    </p>
+                    <p class="timeline-text">
+                        <strong>AR:</strong> About 21%
+                    </p>
+                </li>
+            </ol>
+
+        </section>
 
         <section class="timeline">
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="newspaper-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Education</h3>
+            <h3 class="h3">Research Experience</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
+              <h4 class="h4 timeline-item-title">Research Assistant</h4>
 
-              <span>2007 — 2008</span>
+              <span>Xi'an Jiaotong-Liverpool University, Suzhou, China</span>
+              <span>Jul.2023 — Jun.2024</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                  Doing data processing in the project "A Corpus Study of Communication in Online University Courses form Different Disciplines".
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+              <h4 class="h4 timeline-item-title">Research Assistant</h4>
 
-              <span>2006 — 2007</span>
+              <span>X-CHI Lab,Xi'an Jiaotong-Liverpool University, Suzhou, China</span>
+              <span>Jul.2024 — Sep.2024</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                Doing the job of developer and experiment administrator.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
+              <h4 class="h4 timeline-item-title">Research Assistant</h4>
 
-              <span>2002 — 2004</span>
+              <span>Spatial Interaction and Immersive Visualization Lab, Xi'an Jiaotong-Liverpool University, Suzhou, China</span>
+              <span>Nov.2024 — Present</span>
 
               <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
+                Doing the job of developer, experiment administrator and interaction designer.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Research Assistant</h4>
+
+              <span>Computational Media and Arts Thrust, The Hong Kong University of Science and Technology (Guangzhou) , Guangzhou, China</span>
+              <span>Aug.2024 — Present</span>
+
+              <p class="timeline-text">
+                Doing the job of developer, experiment administrator and interaction designer.
               </p>
 
             </li>
@@ -589,126 +700,103 @@
           </ol>
 
         </section>
-
         <section class="timeline">
+            <div class="title-wrapper">
+                <div class="icon-box">
+                    <ion-icon name="briefcase-outline"></ion-icon>
+                </div>
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+                <h3 class="h3">Work Experience</h3>
             </div>
 
-            <h3 class="h3">Experience</h3>
-          </div>
+            <ol class="timeline-list">
 
-          <ol class="timeline-list">
+                <li class="timeline-item">
 
-            <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Student Lecturer</h4>
+                    <span>Xi’an Jiaotong-Liverpool University, Suzhou, China</span>
+                    <span>Sep.2023 - Nov.2023</span>
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+                    <p class="timeline-text">
+                        Teaching the course of "Introduction to Apple products, which includes the instructions and background of major Apple products"
+                    </p>
+                </li>
 
-              <span>2015 — Present</span>
+                <li class="timeline-item">
 
-              <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
+                    <h4 class="h4 timeline-item-title">Card Designer, Programmer, Tester</h4>
+                    <span>ZeroCastle Game Studio, Shanghai, China</span>
+                    <span>Sep.2024 - Present</span>
 
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-          </ol>
+                    <p class="timeline-text">
+                        Design the cards for role of Baji and Zajia in the game of KongFu Cards, which gets the first prize in DICE CON 2025.
+                    </p>
+                </li>
+            </ol>
 
         </section>
 
-        <section class="skill">
+<!--        <section class="skill">-->
 
-          <h3 class="h3 skills-title">My skills</h3>
+<!--          <h3 class="h3 skills-title">My skills</h3>-->
 
-          <ul class="skills-list content-card">
+<!--          <ul class="skills-list content-card">-->
 
-            <li class="skills-item">
+<!--            <li class="skills-item">-->
 
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
-              </div>
+<!--              <div class="title-wrapper">-->
+<!--                <h5 class="h5">Web design</h5>-->
+<!--                <data value="80">80%</data>-->
+<!--              </div>-->
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
+<!--              <div class="skill-progress-bg">-->
+<!--                <div class="skill-progress-fill" style="width: 80%;"></div>-->
+<!--              </div>-->
 
-            </li>
+<!--            </li>-->
 
-            <li class="skills-item">
+<!--            <li class="skills-item">-->
 
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
+<!--              <div class="title-wrapper">-->
+<!--                <h5 class="h5">Graphic design</h5>-->
+<!--                <data value="70">70%</data>-->
+<!--              </div>-->
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
+<!--              <div class="skill-progress-bg">-->
+<!--                <div class="skill-progress-fill" style="width: 70%;"></div>-->
+<!--              </div>-->
 
-            </li>
+<!--            </li>-->
 
-            <li class="skills-item">
+<!--            <li class="skills-item">-->
 
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
-              </div>
+<!--              <div class="title-wrapper">-->
+<!--                <h5 class="h5">Branding</h5>-->
+<!--                <data value="90">90%</data>-->
+<!--              </div>-->
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
+<!--              <div class="skill-progress-bg">-->
+<!--                <div class="skill-progress-fill" style="width: 90%;"></div>-->
+<!--              </div>-->
 
-            </li>
+<!--            </li>-->
 
-            <li class="skills-item">
+<!--            <li class="skills-item">-->
 
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
+<!--              <div class="title-wrapper">-->
+<!--                <h5 class="h5">WordPress</h5>-->
+<!--                <data value="50">50%</data>-->
+<!--              </div>-->
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
+<!--              <div class="skill-progress-bg">-->
+<!--                <div class="skill-progress-fill" style="width: 50%;"></div>-->
+<!--              </div>-->
 
-            </li>
+<!--            </li>-->
 
-          </ul>
+<!--          </ul>-->
 
-        </section>
+<!--        </section>-->
 
       </article>
 
@@ -952,202 +1040,6 @@
 
       </article>
 
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
       <!--
         - #CONTACT
       -->
@@ -1161,7 +1053,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218118.11052860244!2d118.22936071476461!3d31.32873621305992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34354978b41cab51%3A0xf168d14d8f0a2226!2z5Lit5Zu95a6J5b6955yB6Iqc5rmW5biC!5e0!3m2!1szh-CN!2shk!4v1766975244934!5m2!1szh-CN!2shk"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1170,22 +1062,22 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+            <form action="https://formspree.io/f/mlgepyjk" method="POST" class="form" data-form>
+                <div class="input-wrapper">
+                    <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+                    <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+                </div>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+                <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+                <input type="hidden" name="subject" value="New message from portfolio">
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                <button class="form-btn" type="submit" data-form-btn>
+                    <ion-icon name="paper-plane"></ion-icon>
+                    <span>Send Message</span>
+                </button>
+            </form>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
 
         </section>
 

@@ -24,33 +24,33 @@
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
     hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
+    to bottom right,
+    hsla(240, 1%, 18%, 0.251) 0%,
     hsla(240, 2%, 11%, 0) 100%
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
+    135deg,
+    hsla(45, 100%, 71%, 0.251) 0%,
     hsla(35, 100%, 68%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
+    to right,
+    hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
 
@@ -95,7 +95,7 @@
   /**
    * shadow
    */
-  
+
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
@@ -509,7 +509,7 @@ main {
 
 
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
@@ -557,7 +557,7 @@ main {
 
 
 /**
- * #testimonials 
+ * #testimonials
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -723,7 +723,7 @@ main {
 
 
 /**
- * #clients 
+ * #clients
  */
 
 .clients { margin-bottom: 15px; }
@@ -768,7 +768,7 @@ main {
 
 
 /**
- * education and experience 
+ * education and experience
  */
 
 .timeline { margin-bottom: 30px; }
@@ -829,9 +829,64 @@ main {
   line-height: 1.6;
 }
 
+/* 下载按钮单独一行，并与标题拉开距离 */
+.paper-download-row{
+    margin-top: 8px;     /* 想更空就 10~14px */
+}
+
+/* 下载按钮往下“微调”一点 */
+.paper-download{
+    display: inline-flex;
+    transform: translateY(4px); /* 想更低就 4px */
+    position: relative;
+    z-index: 2;                 /* 确保不会被标题效果盖住 */
+}
+
+/* ===== 标题链接 hover 特效 ===== */
+.paper-title-link{
+    color: var(--white-2);
+    text-decoration: none;
+    transition: var(--transition-1);
+    position: relative;
+    display: inline-block;
+}
+
+/* 下划线动画 */
+.paper-title-link::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--text-gradient-yellow);
+    transition: var(--transition-1);
+}
+
+.paper-title-link:hover::after{
+    width: 100%;
+}
+
+/* 变色 + 发光 + 渐变背景 + 位置变化 */
+.paper-title-link:hover{
+    color: var(--orange-yellow-crayola);
+    text-shadow: 0 0 10px hsla(45, 100%, 72%, 0.3);
+
+    background: linear-gradient(
+            135deg,
+            hsla(45, 100%, 71%, 0.1) 0%,
+            hsla(35, 100%, 68%, 0.05) 100%
+    );
+
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin: -2px -4px;
+}
+
+
 
 /**
- * skills 
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -865,6 +920,17 @@ main {
   background: var(--text-gradient-yellow);
   height: 100%;
   border-radius: inherit;
+}
+
+.resume-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.resume-download{
+    text-decoration: none;
 }
 
 
@@ -1244,7 +1310,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #PORTFOLIO, BLOG
    */
 
   .project-img,
@@ -1295,14 +1361,31 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .article-title {
-    font-weight: var(--fw-600);
-    padding-bottom: 15px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
   }
 
-  .article-title::after {
-    width: 40px;
-    height: 5px;
-  }
+   .article-title .icon-box {
+     display: flex;
+     align-items: center;
+    }
+
+   .article-title {
+     position: relative;
+     padding-bottom: 7px;
+   }
+
+   .article-title::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 30px;
+     height: 3px;
+     background: var(--text-gradient-yellow);
+     border-radius: 3px;
+   }
 
   .icon-box {
     width: 48px;
@@ -1310,8 +1393,90 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 12px;
     font-size: 18px;
   }
+  .tag-box {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px; /* 药丸形状 */
+    font-size: 14px;
+    color: var(--orange-yellow-crayola);
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+    transition: var(--transition-1);
+  }
+
+  .tag-box::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--eerie-black-1);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .tag-box ion-icon {
+    -ionicon-stroke-width: 35px;
+    font-size: 16px;
+  }
+
+  .tag-box:hover {
+    background: var(--bg-gradient-yellow-1);
+    transform: translateY(-2px);
+  }
+
+  .tag-box:hover::before {
+    background: var(--bg-gradient-yellow-2);
+  }
 
 
+  .tag-box.small {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 16px;
+  }
+
+  .tag-box.large {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 24px;
+  }
+
+
+  .tag-box.primary {
+    color: var(--orange-yellow-crayola);
+  }
+
+  .tag-box.secondary {
+    color: var(--light-gray);
+  }
+
+  .tag-box.accent {
+    color: var(--vegas-gold);
+  }
+
+
+  .tag-box.icon-only {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 18px;
+  }
+
+  .tag-box.icon-only.small {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+  }
+
+  .tag-box.icon-only.large {
+    width: 44px;
+    eight: 44px;
+    border-radius: 22px;
+  }
 
   /**
    * #MAIN
@@ -1497,14 +1662,45 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 8px;
     left: -43px;
   }
+  .timeline-text strong{ font-weight: 700; }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
+    .skills-section {
+        padding-top: 10px;
+    }
+
+    .skills-subtitle {
+        color: var(--white-2);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .skills-category {
+        margin-top: 10px;
+    }
+
+    .skills-category-title {
+        color: var(--white-2);
+        margin-bottom: 12px;
+        font-weight: var(--fw-500);
+    }
+
+    .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .skills-tags .tag-box {
+        margin-bottom: 8px;
+    }
 
 
 
-  /**
-   * #PORTFOLIO, BLOG
-   */
+    /**
+     * #PORTFOLIO, BLOG
+     */
 
   .project-img, .blog-banner-box { border-radius: 16px; }
 
@@ -1638,7 +1834,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
 }
 
 
@@ -1681,7 +1877,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * MAIN 
+   * MAIN
    */
 
   main { margin-bottom: 60px; }
@@ -1870,7 +2066,24 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .social-list { justify-content: center; }
+    .social-links {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
 
+    .social-link ion-icon {
+        font-size: 18px;
+        color: var(--light-gray);
+        transition: color var(--transition-1);
+    }
+
+    .social-link:hover ion-icon {
+        color: var(--orange-yellow-crayola);
+    }
 
 
   /**

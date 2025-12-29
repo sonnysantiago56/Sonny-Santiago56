@@ -1,0 +1,168 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mei (Volcanologist) - Slides</title>
+
+    <link rel="icon" href="../../assets/images/logo.png" type="image/png">
+
+
+    <style>
+        :root{
+            --bg: #0b0b0b;
+            --card: rgba(255,255,255,0.06);
+            --text: rgba(255,255,255,0.88);
+        }
+
+        html, body { height: 100%; margin: 0; }
+        body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+
+        /* Scroll-snap deck */
+        .deck{
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 18px 0;
+            box-sizing: border-box;
+        }
+
+        .slide{
+            height: calc(100vh - 36px);
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            box-sizing: border-box;
+        }
+
+        .slide img{
+            max-width: min(1200px, 96vw);
+            max-height: 92vh;
+            width: auto;
+            height: auto;
+            border-radius: 14px;
+            background: var(--card);
+            box-shadow: 0 14px 40px rgba(0,0,0,.45);
+        }
+
+        /* HUD */
+        .hud{
+            position: fixed;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .chip{
+            pointer-events: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0,0,0,.35);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 999px;
+            padding: 8px 12px;
+            backdrop-filter: blur(10px);
+            font-size: 14px;
+        }
+
+        .btn{
+            pointer-events: auto;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(255,255,255,.06);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 8px 10px;
+            font-size: 14px;
+            transition: transform .12s ease, filter .12s ease;
+            user-select: none;
+        }
+        .btn:hover{ filter: brightness(1.15); transform: translateY(-1px); }
+
+        .hint{
+            opacity: .8;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="deck" id="deck">
+
+    <!-- 12 slides -->
+    <section class="slide"><img src="./slides/slide1.png"  alt="Slide 1"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide2.png"  alt="Slide 2"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide3.png"  alt="Slide 3"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide4.png"  alt="Slide 4"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide5.png"  alt="Slide 5"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide6.png"  alt="Slide 6"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide7.png"  alt="Slide 7"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide8.png"  alt="Slide 8"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide9.png"  alt="Slide 9"  loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide10.png" alt="Slide 10" loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide11.png" alt="Slide 11" loading="lazy"></section>
+    <section class="slide"><img src="./slides/slide12.png" alt="Slide 12" loading="lazy"></section>
+
+</div>
+
+<div class="hud">
+    <div class="chip" id="page">1 / 12</div>
+
+    <div class="chip hint">Scroll / ↑↓ / PgUp PgDn / Space</div>
+
+    <div class="chip">
+        <button class="btn" id="prev" type="button">Prev</button>
+        <button class="btn" id="next" type="button">Next</button>
+    </div>
+</div>
+
+<script>
+    const deck = document.getElementById('deck');
+    const slides = Array.from(deck.querySelectorAll('.slide'));
+    const pageEl = document.getElementById('page');
+
+    function currentIndex(){
+        const h = deck.clientHeight;
+        return Math.max(0, Math.min(slides.length - 1, Math.round(deck.scrollTop / h)));
+    }
+
+    function updatePage(){
+        const idx = currentIndex();
+        pageEl.textContent = `${idx + 1} / ${slides.length}`;
+    }
+
+    function go(delta){
+        const h = deck.clientHeight;
+        deck.scrollBy({ top: delta * h, behavior: 'smooth' });
+    }
+
+    // Scroll -> update page indicator
+    deck.addEventListener('scroll', () => requestAnimationFrame(updatePage));
+    window.addEventListener('resize', () => requestAnimationFrame(updatePage));
+    updatePage();
+
+    // Buttons
+    document.getElementById('prev').addEventListener('click', () => go(-1));
+    document.getElementById('next').addEventListener('click', () => go(1));
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+        const k = e.key;
+        if (k === 'ArrowDown' || k === 'PageDown' || k === ' ') {
+            e.preventDefault(); go(1);
+        } else if (k === 'ArrowUp' || k === 'PageUp') {
+            e.preventDefault(); go(-1);
+        }
+    });
+</script>
+</body>
+</html>
