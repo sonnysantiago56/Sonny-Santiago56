@@ -72,8 +72,8 @@
       background: var(--eerie-black-1); border-radius: inherit; z-index: -1;
     }
     .icon-box ion-icon { --ionicon-stroke-width: 35px; }
-    article { display: none; }
-    article.active { display: block; animation: fade 0.5s ease backwards; }
+    article { display: none !important; }
+    article.active { display: block !important; animation: fade 0.5s ease backwards; }
     @keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
     .h2, .h3, .h4, .h5 { color: var(--white-2); text-transform: capitalize; }
     .h2 { font-size: var(--fs-1); }
@@ -747,7 +747,6 @@
               <li class="select-item"><button data-select-item>All</button></li>
               <li class="select-item"><button data-select-item>Education</button></li>
               <li class="select-item"><button data-select-item>Entrepreneurship</button></li>
-              <li class="select-item"><button data-select-item>Athletics</button></li>
             </ul>
           </div>
 
@@ -756,103 +755,148 @@
             <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
             <li class="filter-item"><button data-filter-btn>Education</button></li>
             <li class="filter-item"><button data-filter-btn>Entrepreneurship</button></li>
-            <li class="filter-item"><button data-filter-btn>Athletics</button></li>
           </ul>
 
           <ul class="project-list">
+
+            <!-- 1. Prompt.ly -->
             <li class="project-item active" data-filter-item data-category="education">
               <a href="https://www.figma.com/proto/uttLkipr4ZduqPsQEioxBA/Promptly-Prototype?node-id=201-366&starting-point-node-id=201%3A366&t=TBOFr1ab0HTNq4dT-1" target="_blank" rel="noopener">
                 <div class="project-img">
-                  <div class="project-img-inner" style="background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(270,30%,12%) 100%);flex-direction:column;gap:10px;padding:20px;">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-                      <ion-icon name="game-controller-outline" style="font-size:36px;color:var(--orange-yellow-crayola);display:block;opacity:1;"></ion-icon>
-                      <span style="font-size:22px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Prompt.ly</span>
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(270,30%,12%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="game-controller-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:20px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Prompt.ly</span>
                     </div>
-                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;max-width:200px;">Gamified AI prompting tool designed to help students learn how to effectively communicate with AI</p>
-                    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:4px;">
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Gamified AI prompting tool helping students learn to effectively communicate with AI</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
                       <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">EdTech</span>
                       <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Gamification</span>
                       <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">AI Literacy</span>
                     </div>
                   </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="open-outline"></ion-icon>
-                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
                 </div>
                 <h3 class="project-title">Prompt.ly</h3>
-                <p class="project-category">Education · Gamified AI Prompting Tool for Students</p>
+                <p class="project-category">Education · Gamified AI Prompting Tool</p>
               </a>
             </li>
-            <li class="project-item active" data-filter-item data-category="entrepreneurship">
-              <a href="#">
-                <div class="project-img">
-                  <div class="project-img-inner">
-                    <ion-icon name="rocket-outline"></ion-icon>
-                  </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-                <h3 class="project-title">Launch Chapel Hill Accelerator</h3>
-                <p class="project-category">Entrepreneurship · Startup Program</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="entrepreneurship">
-              <a href="#">
-                <div class="project-img">
-                  <div class="project-img-inner">
-                    <ion-icon name="megaphone-outline"></ion-icon>
-                  </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-                <h3 class="project-title">Student Athlete Speaker Series</h3>
-                <p class="project-category">Entrepreneurship · Leadership</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="athletics">
-              <a href="#">
-                <div class="project-img">
-                  <div class="project-img-inner">
-                    <ion-icon name="trophy-outline"></ion-icon>
-                  </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-                <h3 class="project-title">NCAA Tournament Journey</h3>
-                <p class="project-category">Athletics · 2x D1 Qualifier</p>
-              </a>
-            </li>
-            <li class="project-item active" data-filter-item data-category="athletics">
-              <a href="#">
-                <div class="project-img">
-                  <div class="project-img-inner">
-                    <ion-icon name="flag-outline"></ion-icon>
-                  </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </div>
-                <h3 class="project-title">Puerto Rican National Team</h3>
-                <p class="project-category">Athletics · International Competition</p>
-              </a>
-            </li>
+
+            <!-- 2. Elder.li -->
             <li class="project-item active" data-filter-item data-category="education">
-              <a href="#">
+              <a href="https://www.figma.com/proto/eAauxiZI1p3hgGVlBjt0v2/Untitled?node-id=1-52&starting-point-node-id=1%3A16&t=dwPIqjiLFhHJZGH8-1" target="_blank" rel="noopener">
                 <div class="project-img">
-                  <div class="project-img-inner">
-                    <ion-icon name="people-outline"></ion-icon>
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(210,30%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="heart-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:20px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Elder.li</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">App designed for elders to track medication, set reminders, build community & connect with health providers</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">HealthTech</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">UX Design</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Community</span>
+                    </div>
                   </div>
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
                 </div>
-                <h3 class="project-title">UNC Event Management</h3>
-                <p class="project-category">Education · 200+ Hours of D1 Events</p>
+                <h3 class="project-title">Elder.li</h3>
+                <p class="project-category">Education · Elder Health & Community App</p>
               </a>
             </li>
+
+            <!-- 3. Chapel Hill Food Connect -->
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAG5WFm3cfs/9fU3-pecbvrbvBAZMBeXZA/edit?utm_content=DAG5WFm3cfs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(130,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="storefront-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:17px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Food Connect</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Business pitch connecting Chapel Hill restaurants with local food pantries to deliver donations and feed the community</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Social Impact</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Business Pitch</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Community</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Chapel Hill Food Connect</h3>
+                <p class="project-category">Entrepreneurship · Restaurant & Food Pantry Network</p>
+              </a>
+            </li>
+
+            <!-- 4. Athletes in Entrepreneurship Speaker Series -->
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAG7lTfwfOQ/RA4S-8U8MG0EkNt4nQ1cMA/edit?utm_content=DAG7lTfwfOQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(290,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="mic-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Athletes in Entrepreneurship</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Launch Chapel Hill speaker series connecting entrepreneurs with student athletes to introduce careers in entrepreneurship</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Speaker Series</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Athletics</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Leadership</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Athletes in Entrepreneurship</h3>
+                <p class="project-category">Entrepreneurship · Launch Chapel Hill Speaker Series</p>
+              </a>
+            </li>
+
+            <!-- 5. Online Learning Market Industry Analysis -->
+            <li class="project-item active" data-filter-item data-category="education">
+              <a href="https://www.canva.com/design/DAGYMuQY4ms/GBfwY31-XAHF-naPQ5Qm7g/edit?utm_content=DAGYMuQY4ms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(220,25%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="bar-chart-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Online Learning Analysis</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Industry analysis of the online learning market featuring a deep dive into EdX and Coursera</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Industry Analysis</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">EdTech</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Research</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Online Learning Market Analysis</h3>
+                <p class="project-category">Education · EdX & Coursera Industry Research</p>
+              </a>
+            </li>
+
+            <!-- 6. Event Management Internship Summation -->
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAGKaHnKpa0/ebiOl8glXZsKkTF0dpyH2A/edit" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(20,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="calendar-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;opacity:1;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Event Management Internship</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Summation of my UNC Event Management internship — 200+ hours of D1 events, ACC Championships & NCAA Tournaments</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Event Management</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">D1 Sports</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">UNC</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Event Management Internship</h3>
+                <p class="project-category">Entrepreneurship · UNC Internship Summation</p>
+              </a>
+            </li>
+
           </ul>
         </section>
       </article>
@@ -901,15 +945,19 @@
     const navLinks = document.querySelectorAll('[data-nav-link]');
     const articles = document.querySelectorAll('article[data-page]');
 
+    function navigateTo(target) {
+      articles.forEach(a => {
+        a.dataset.page === target ? a.classList.add('active') : a.classList.remove('active');
+      });
+      navLinks.forEach(l => {
+        l.textContent.trim().toLowerCase() === target ? l.classList.add('active') : l.classList.remove('active');
+      });
+    }
+
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         const target = link.textContent.trim().toLowerCase();
-        articles.forEach(a => {
-          a.dataset.page === target ? a.classList.add('active') : a.classList.remove('active');
-        });
-        navLinks.forEach(l => {
-          l.textContent.trim().toLowerCase() === target ? l.classList.add('active') : l.classList.remove('active');
-        });
+        navigateTo(target);
       });
     });
 
