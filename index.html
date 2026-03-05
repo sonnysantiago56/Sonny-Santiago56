@@ -412,7 +412,7 @@
             <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
-              <a href="/cdn-cgi/l/email-protection#085b676666717b69667c61696f673d3e486f65696164266b6765" class="contact-link"><span class="__cf_email__" data-cfemail="63300c0d0d1a10020d170a02040c565523040e020a0f4d000c0e">[email&#160;protected]</span></a>
+              <a href="mailto:sonnysantiago@email.com" class="contact-link">sonnysantiago@email.com</a>
             </div>
           </li>
           <li class="contact-item">
@@ -935,7 +935,7 @@
     </div>
   </main>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Sidebar toggle
     const sidebar = document.querySelector('[data-sidebar]');
     const sidebarBtn = document.querySelector('[data-sidebar-btn]');
@@ -1022,11 +1022,10 @@
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         formMsg.textContent = 'Please enter a valid email address.';
-        form
-formMsg.className = 'form-msg error';
+        formMsg.className = 'form-msg error';
         return;
       }
-      formMsg.textContent = 'Message sent! I\'ll be in touch soon.';
+      formMsg.textContent = "Message sent! I'll be in touch soon.";
       formMsg.className = 'form-msg success';
       contactForm.reset();
     });
