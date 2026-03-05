@@ -1023,3 +1023,13 @@
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         formMsg.textContent = 'Please enter a valid email address.';
         form
+formMsg.className = 'form-msg error';
+        return;
+      }
+      formMsg.textContent = 'Message sent! I\'ll be in touch soon.';
+      formMsg.className = 'form-msg success';
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
