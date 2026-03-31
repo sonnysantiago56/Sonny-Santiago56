@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonny Santiago — Graduate Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <style>
+    :root {
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(270, 100%, 71%) 0%, hsla(280, 100%, 69%, 0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, hsla(270, 100%, 71%, 0.251) 0%, hsla(280, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, hsl(270, 100%, 72%), hsl(280, 100%, 68%));
+      --jet: hsl(0, 0%, 22%);
+      --onyx: hsl(240, 1%, 17%);
+      --eerie-black-1: hsl(240, 2%, 13%);
+      --eerie-black-2: hsl(240, 2%, 12%);
+      --smoky-black: hsl(0, 0%, 7%);
+      --white-1: hsl(0, 0%, 100%);
+      --white-2: hsl(0, 0%, 98%);
+      --orange-yellow-crayola: hsl(270, 100%, 72%);
+      --vegas-gold: hsl(270, 54%, 58%);
+      --light-gray: hsl(0, 0%, 84%);
+      --light-gray-70: hsla(0, 0%, 84%, 0.7);
+      --bittersweet-shimmer: hsl(0, 43%, 51%);
+      --ff-poppins: 'Poppins', sans-serif;
+      --fs-1: 24px; --fs-2: 18px; --fs-3: 17px; --fs-4: 16px;
+      --fs-5: 15px; --fs-6: 14px; --fs-7: 13px; --fs-8: 11px;
+      --fw-300: 300; --fw-400: 400; --fw-500: 500; --fw-600: 600;
+      --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+      --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+      --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+      --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+      --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+      --transition-1: 0.25s ease;
+      --transition-2: 0.5s ease-in-out;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    a { text-decoration: none; }
+    li { list-style: none; }
+    img, ion-icon, a, button, time, span { display: block; }
+    button { font: inherit; background: none; border: none; text-align: left; cursor: pointer; }
+    input, textarea { display: block; width: 100%; background: none; font: inherit; }
+    ::selection { background: var(--orange-yellow-crayola); color: var(--smoky-black); }
+    :focus { outline-color: var(--orange-yellow-crayola); }
+    html { font-family: var(--ff-poppins); }
+    body { background: var(--smoky-black); }
+
+    .sidebar, article {
+      background: var(--eerie-black-2); border: 1px solid var(--jet);
+      border-radius: 20px; padding: 15px; box-shadow: var(--shadow-1); z-index: 1;
+    }
+    .separator { width: 100%; height: 1px; background: var(--jet); margin: 16px 0; }
+    .icon-box {
+      position: relative; background: var(--border-gradient-onyx);
+      width: 30px; height: 30px; border-radius: 8px;
+      display: flex; justify-content: center; align-items: center;
+      font-size: 16px; color: var(--orange-yellow-crayola);
+      box-shadow: var(--shadow-1); z-index: 1;
+    }
+    .icon-box::before { content: ""; position: absolute; inset: 1px; background: var(--eerie-black-1); border-radius: inherit; z-index: -1; }
+    .icon-box ion-icon { --ionicon-stroke-width: 35px; }
+    article { display: none !important; }
+    article.active { display: block !important; animation: fade 0.5s ease backwards; }
+    @keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+    .h2, .h3, .h4, .h5 { color: var(--white-2); text-transform: capitalize; }
+    .h2 { font-size: var(--fs-1); }
+    .h3 { font-size: var(--fs-2); }
+    .h4 { font-size: var(--fs-4); }
+    .h5 { font-size: var(--fs-7); font-weight: var(--fw-500); }
+    .article-title { position: relative; padding-bottom: 7px; }
+    .article-title::after { content: ""; position: absolute; bottom: 0; left: 0; width: 30px; height: 3px; background: var(--text-gradient-yellow); border-radius: 3px; }
+    .has-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+    .has-scrollbar::-webkit-scrollbar-track { background: var(--onyx); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-thumb { background: var(--orange-yellow-crayola); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+    .content-card { position: relative; background: var(--border-gradient-onyx); padding: 15px; padding-top: 45px; border-radius: 14px; box-shadow: var(--shadow-2); cursor: pointer; z-index: 1; }
+    .content-card::before { content: ""; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; }
+
+    main { margin: 15px 12px; margin-bottom: 75px; min-width: 259px; }
+
+    /* SIDEBAR */
+    .sidebar { margin-bottom: 15px; max-height: 112px; overflow: hidden; transition: var(--transition-2); }
+    .sidebar.active { max-height: 560px; }
+    .sidebar-info { position: relative; display: flex; justify-content: flex-start; align-items: center; gap: 15px; }
+    .avatar-box { background: var(--bg-gradient-onyx); border-radius: 20px; overflow: hidden; flex-shrink: 0; width: 80px; height: 80px; }
+    .avatar-box img { width: 80px; height: 80px; object-fit: cover; display: block; }
+    .info-content .name { color: var(--white-2); font-size: var(--fs-3); font-weight: var(--fw-500); letter-spacing: -0.25px; margin-bottom: 10px; }
+    .info-content .title { color: var(--white-1); background: var(--onyx); font-size: var(--fs-8); font-weight: var(--fw-300); width: max-content; padding: 3px 12px; border-radius: 8px; }
+    .info_more-btn { position: absolute; top: -15px; right: -15px; border-radius: 0 15px; font-size: 13px; color: var(--orange-yellow-crayola); background: var(--border-gradient-onyx); padding: 10px; box-shadow: var(--shadow-2); transition: var(--transition-1); z-index: 1; }
+    .info_more-btn::before { content: ""; position: absolute; inset: 1px; border-radius: inherit; background: var(--bg-gradient-jet); transition: var(--transition-1); z-index: -1; }
+    .info_more-btn:hover, .info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+    .info_more-btn:hover::before, .info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+    .info_more-btn span { display: none; }
+    .sidebar-info_more { opacity: 0; visibility: hidden; transition: var(--transition-2); }
+    .sidebar.active .sidebar-info_more { opacity: 1; visibility: visible; }
+    .contacts-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .contact-item { min-width: 100%; display: flex; align-items: center; gap: 16px; }
+    .contact-info { max-width: calc(100% - 46px); width: calc(100% - 46px); }
+    .contact-title { color: var(--light-gray-70); font-size: var(--fs-8); text-transform: uppercase; margin-bottom: 2px; }
+    .contact-info :is(.contact-link, time, address) { color: var(--white-2); font-size: var(--fs-7); }
+    .contact-info address { font-style: normal; }
+    .social-list { display: flex; justify-content: flex-start; align-items: center; gap: 15px; padding-bottom: 4px; padding-left: 7px; }
+    .social-item .social-link { color: var(--light-gray-70); font-size: 18px; }
+    .social-item .social-link:hover { color: var(--light-gray); }
+
+    /* NAVBAR */
+    .navbar { position: fixed; bottom: 0; left: 0; width: 100%; background: hsla(240, 1%, 17%, 0.75); backdrop-filter: blur(10px); border: 1px solid var(--jet); border-radius: 12px 12px 0 0; box-shadow: var(--shadow-2); z-index: 5; }
+    .navbar-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 0 10px; }
+    .navbar-link { color: var(--light-gray); font-size: var(--fs-8); padding: 20px 7px; transition: color var(--transition-1); }
+    .navbar-link:hover, .navbar-link:focus { color: var(--light-gray-70); }
+    .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+    /* ABOUT */
+    .about .article-title { margin-bottom: 15px; }
+    .about-text { color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); line-height: 1.6; }
+    .about-text p { margin-bottom: 15px; }
+    .badges-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; margin-bottom: 24px; }
+    .highlight-badge { display: inline-block; background: var(--bg-gradient-jet); border: 1px solid var(--jet); color: var(--orange-yellow-crayola); font-size: var(--fs-8); font-weight: var(--fw-500); padding: 5px 12px; border-radius: 20px; letter-spacing: 0.4px; }
+
+    /* SERVICE */
+    .service { margin-bottom: 35px; }
+    .service-title { margin-bottom: 20px; }
+    .service-list { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .service-item { position: relative; background: var(--border-gradient-onyx); padding: 20px; border-radius: 14px; box-shadow: var(--shadow-2); z-index: 1; }
+    .service-item::before { content: ""; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; }
+    .service-icon-box { margin-bottom: 10px; }
+    .service-content-box { text-align: center; }
+    .service-item-title { margin-bottom: 7px; }
+    .service-item-text { color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); line-height: 1.6; }
+
+    /* DOWNLOAD BUTTON */
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      position: relative; background: var(--border-gradient-onyx);
+      color: var(--orange-yellow-crayola);
+      padding: 13px 22px; border-radius: 14px;
+      font-size: var(--fs-6); font-family: var(--ff-poppins); font-weight: var(--fw-500);
+      box-shadow: var(--shadow-3); z-index: 1;
+      transition: var(--transition-1); margin-bottom: 35px;
+    }
+    .download-btn::before {
+      content: ""; position: absolute; inset: 1px;
+      background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1;
+      transition: var(--transition-1);
+    }
+    .download-btn ion-icon { font-size: 18px; flex-shrink: 0; }
+    .download-btn:hover { background: var(--bg-gradient-yellow-1); }
+    .download-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
+    /* RESUME */
+    .article-title { margin-bottom: 30px; }
+    .timeline { margin-bottom: 30px; }
+    .timeline .title-wrapper { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+    .timeline-list { font-size: var(--fs-6); margin-left: 45px; }
+    .timeline-item { position: relative; }
+    .timeline-item:not(:last-child) { margin-bottom: 20px; }
+    .timeline-item-title { font-size: var(--fs-6); line-height: 1.3; margin-bottom: 7px; }
+    .timeline-list span { color: var(--vegas-gold); font-weight: var(--fw-400); line-height: 1.6; }
+    .timeline-item:not(:last-child)::before { content: ""; position: absolute; top: -25px; left: -30px; width: 1px; height: calc(100% + 50px); background: var(--jet); }
+    .timeline-item::after { content: ""; position: absolute; top: 5px; left: -33px; height: 6px; width: 6px; background: var(--text-gradient-yellow); border-radius: 50%; box-shadow: 0 0 0 4px var(--jet); }
+    .timeline-text { color: var(--light-gray); font-weight: var(--fw-300); line-height: 1.6; }
+    .timeline-text ul { padding-left: 18px; margin-top: 6px; }
+    .timeline-text ul li { list-style: disc; color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); line-height: 1.7; margin-bottom: 3px; }
+
+    /* SKILLS */
+    .skills-title { margin-bottom: 20px; }
+    .skills-list { padding: 20px; }
+    .skills-item:not(:last-child) { margin-bottom: 15px; }
+    .skill .title-wrapper { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; }
+    .skill .title-wrapper data { color: var(--light-gray); font-size: var(--fs-7); font-weight: var(--fw-300); }
+    .skill-progress-bg { background: var(--jet); width: 100%; height: 8px; border-radius: 10px; }
+    .skill-progress-fill { background: var(--text-gradient-yellow); height: 100%; border-radius: inherit; }
+
+    /* PORTFOLIO */
+    .filter-select-box { position: relative; margin-bottom: 25px; }
+    .filter-select { background: var(--eerie-black-2); color: var(--light-gray); display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px 16px; border: 1px solid var(--jet); border-radius: 14px; font-size: var(--fs-6); font-weight: var(--fw-300); cursor: pointer; transition: var(--transition-1); }
+    .filter-select.active { border-color: var(--orange-yellow-crayola); }
+    .select-list { background: var(--eerie-black-2); position: absolute; top: calc(100% + 6px); width: 100%; padding: 6px; border: 1px solid var(--jet); border-radius: 14px; z-index: 2; display: none; }
+    .filter-select.active ~ .select-list { display: block; }
+    .select-item button { background: none; color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); width: 100%; padding: 8px 10px; border-radius: 8px; cursor: pointer; transition: var(--transition-1); }
+    .select-item button:hover, .select-item button.active { color: var(--orange-yellow-crayola); }
+    .filter-list { display: none; }
+    .project-list { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 10px; }
+    .project-item { display: none; }
+    .project-item.active { display: block; animation: fade 0.5s ease backwards; }
+    .project-img { position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 15px; }
+    .project-img-inner { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: var(--eerie-black-1); border-radius: 16px; border: 1px solid var(--jet); }
+    .project-item-icon-box { background: hsla(0,0%,0%,0.5); color: var(--orange-yellow-crayola); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); opacity: 0; font-size: 20px; padding: 18px; border-radius: 12px; transition: var(--transition-1); }
+    .project-img:hover .project-item-icon-box { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .project-title { color: var(--white-2); font-size: var(--fs-5); font-weight: var(--fw-500); text-transform: capitalize; line-height: 1.3; margin-bottom: 7px; }
+    .project-category { color: var(--light-gray-70); font-size: var(--fs-6); font-weight: var(--fw-300); }
+
+    /* CONTACT */
+    .mapbox { position: relative; height: 250px; width: 100%; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--jet); overflow: hidden; }
+    .mapbox figure { height: 100%; }
+    .mapbox iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(1); }
+    .contact-form { margin-bottom: 10px; }
+    .form-title { margin-bottom: 20px; }
+    .input-wrapper { display: grid; grid-template-columns: 1fr; gap: 25px; margin-bottom: 25px; }
+    .form-input { color: var(--white-2); font-size: var(--fs-6); font-weight: var(--fw-400); padding: 13px 20px; border: 1px solid var(--jet); border-radius: 14px; outline: none; }
+    .form-input::placeholder { font-weight: var(--fw-500); color: var(--light-gray-70); }
+    .form-input:focus { border-color: var(--orange-yellow-crayola); }
+    textarea.form-input { min-height: 100px; height: 120px; max-height: 200px; resize: vertical; margin-bottom: 25px; }
+    textarea.form-input::-webkit-resizer { display: none; }
+    .form-input:focus:invalid { border-color: var(--bittersweet-shimmer); }
+    .form-btn { position: relative; width: 100%; background: var(--border-gradient-onyx); color: var(--orange-yellow-crayola); display: flex; justify-content: center; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; font-size: var(--fs-6); text-transform: capitalize; box-shadow: var(--shadow-3); z-index: 1; transition: var(--transition-1); }
+    .form-btn::before { content: ""; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; transition: var(--transition-1); }
+    .form-btn ion-icon { font-size: 16px; }
+    .form-btn:hover { background: var(--bg-gradient-yellow-1); }
+    .form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+    .form-msg { margin-top: 14px; font-size: var(--fs-6); text-align: center; display: none; padding: 10px; border-radius: 10px; }
+    .form-msg.success { color: #7dff7d; display: block; background: hsla(120,100%,50%,0.05); border: 1px solid hsla(120,100%,50%,0.15); }
+    .form-msg.error { color: var(--bittersweet-shimmer); display: block; background: hsla(0,43%,51%,0.05); border: 1px solid hsla(0,43%,51%,0.2); }
+
+    /* RESPONSIVE */
+    @media (min-width: 580px) {
+      :root { --fs-1: 32px; --fs-2: 24px; --fs-3: 26px; --fs-4: 18px; --fs-6: 15px; --fs-7: 15px; --fs-8: 12px; }
+      .sidebar, article { width: 520px; margin-inline: auto; padding: 30px; }
+      .article-title { font-weight: var(--fw-600); padding-bottom: 15px; }
+      .article-title::after { width: 40px; height: 5px; }
+      .icon-box { width: 48px; height: 48px; border-radius: 12px; font-size: 18px; }
+      main { margin-top: 60px; margin-bottom: 100px; }
+      .sidebar { max-height: 180px; margin-bottom: 30px; }
+      .sidebar.active { max-height: 650px; }
+      .sidebar-info { gap: 25px; }
+      .avatar-box { border-radius: 30px; width: 120px; height: 120px; }
+      .avatar-box img { width: 120px; height: 120px; }
+      .info-content .name { margin-bottom: 15px; }
+      .info-content .title { padding: 5px 18px; }
+      .info_more-btn { top: -30px; right: -30px; padding: 10px 15px; }
+      .info_more-btn span { display: block; font-size: var(--fs-8); }
+      .info_more-btn ion-icon { display: none; }
+      .separator { margin: 32px 0; }
+      .contacts-list { gap: 20px; }
+      .contact-info { max-width: calc(100% - 64px); width: calc(100% - 64px); }
+      .navbar { border-radius: 20px 20px 0 0; }
+      .navbar-list { gap: 20px; }
+      .about .article-title { margin-bottom: 20px; }
+      .about-text { margin-bottom: 40px; }
+      .service-item { display: flex; justify-content: flex-start; align-items: flex-start; gap: 18px; padding: 30px; }
+      .service-icon-box { margin-bottom: 0; margin-top: 5px; }
+      .service-content-box { text-align: left; }
+      .timeline-list { margin-left: 65px; }
+      .timeline-item:not(:last-child)::before { left: -40px; }
+      .timeline-item::after { height: 8px; width: 8px; left: -43px; }
+      .skills-item:not(:last-child) { margin-bottom: 25px; }
+      .mapbox { height: 380px; border-radius: 18px; }
+      .input-wrapper { gap: 30px; margin-bottom: 30px; }
+      .form-input { padding: 15px 20px; }
+      textarea.form-input { margin-bottom: 30px; }
+      .form-btn { --fs-6: 16px; padding: 16px 20px; }
+      .form-btn ion-icon { font-size: 18px; }
+      .project-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 768px) {
+      .sidebar, article { width: 700px; }
+      .contacts-list { grid-template-columns: 1fr 1fr; gap: 30px 15px; }
+      .article-title { padding-bottom: 20px; }
+      .filter-select-box { display: none; }
+      .filter-list { display: flex; justify-content: flex-start; align-items: center; gap: 25px; padding-left: 5px; margin-bottom: 30px; }
+      .filter-item button { color: var(--light-gray); font-size: var(--fs-5); transition: var(--transition-1); }
+      .filter-item button:hover { color: var(--light-gray-70); }
+      .filter-item button.active { color: var(--orange-yellow-crayola); }
+      .input-wrapper { grid-template-columns: 1fr 1fr; }
+      .form-btn { width: max-content; margin-left: auto; }
+    }
+    @media (min-width: 1024px) {
+      :root { --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125); --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125); --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125); }
+      .sidebar, article { width: 950px; box-shadow: var(--shadow-5); }
+      main { margin-bottom: 60px; }
+      .main-content { position: relative; width: max-content; margin: auto; }
+      .navbar { position: absolute; bottom: auto; top: 0; left: auto; right: 0; width: max-content; border-radius: 0 20px; padding: 0 20px; box-shadow: none; }
+      .navbar-list { gap: 30px; padding: 0 20px; }
+      .navbar-link { font-weight: var(--fw-500); }
+      .service-list { grid-template-columns: 1fr 1fr; gap: 20px 25px; }
+      .project-list { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (min-width: 1250px) {
+      body::-webkit-scrollbar { width: 20px; }
+      body::-webkit-scrollbar-track { background: var(--smoky-black); }
+      body::-webkit-scrollbar-thumb { border: 5px solid var(--smoky-black); background: hsla(0, 0%, 100%, 0.1); border-radius: 20px; box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), inset -1px -1px 0 hsla(0, 0%, 100%, 0.11); }
+      body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+      body::-webkit-scrollbar-button { height: 60px; }
+      .sidebar, article { width: auto; }
+      article { min-height: 100%; }
+      main { max-width: 1200px; margin-inline: auto; display: flex; justify-content: center; align-items: stretch; gap: 25px; }
+      .main-content { min-width: 75%; width: 75%; margin: 0; }
+      .sidebar { position: sticky; top: 60px; max-height: max-content; height: 100%; margin-bottom: 0; padding-top: 60px; z-index: 1; }
+      .sidebar-info { flex-direction: column; }
+      .avatar-box { width: 150px; height: 150px; border-radius: 30px; }
+      .avatar-box img { width: 150px; height: 150px; }
+      .info-content .name { white-space: nowrap; text-align: center; }
+      .info-content .title { margin: auto; }
+      .info_more-btn { display: none; }
+      .sidebar-info_more { opacity: 1; visibility: visible; }
+      .contacts-list { grid-template-columns: 1fr; }
+      .contact-info :is(.contact-link) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .contact-info :is(.contact-link, time, address) { --fs-7: 14px; font-weight: var(--fw-300); }
+      .separator:last-of-type { margin: 15px 0; opacity: 0; }
+      .social-list { justify-content: center; }
+      .timeline-text { max-width: 700px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="headshot.png" alt="Sonny Santiago" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Sonny Santiago">Sonny Santiago</h1>
+          <p class="title">Graduate Student</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="/cdn-cgi/l/email-protection#3d6e525353444e5c5349545c5a52080b7d5a505c5451135e5250" class="contact-link"><span class="__cf_email__" data-cfemail="2f7c404141565c4e415b464e48401a196f48424e4643014c4042">[email&#160;protected]</span></a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+16614773891" class="contact-link">661-477-3891</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Program</p>
+              <time>Aug 2024 – Aug 2026</time>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Chapel Hill, NC 27517</address>
+            </div>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/sonny-santiago-3b982629b" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.instagram.com/_sonnysantiago_" target="_blank" rel="noopener" class="social-link" title="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
+        </ul>
+      </nav>
+
+      <!-- ======== ABOUT ======== -->
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm <strong style="background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Sonny Santiago</strong>, a graduate student at the University of North Carolina at Chapel Hill pursuing a Master's in Educational Innovation, Technology, and Entrepreneurship. A proud UNC Wrestling alumnus and 2x D1 NCAA Tournament qualifier, I bring the same discipline and competitive drive from athletics into everything I pursue.
+          </p>
+          <p>
+            My passion lives at the intersection of education, technology, and community impact. From partnering with the Mark Cuban Foundation on AI rubrics for teachers to leading entrepreneurial initiatives at Launch Chapel Hill, I'm committed to transforming how students and communities access opportunity — and to building the next generation of innovators.
+          </p>
+        </section>
+
+        <div class="badges-row">
+          <span class="highlight-badge">🏆 Iron Ram Award 2025</span>
+          <span class="highlight-badge">📋 ACC Honors List 2025</span>
+          <span class="highlight-badge">🤝 Mark Cuban Foundation Partner</span>
+          <span class="highlight-badge">🤼 2x D1 NCAA Tournament Qualifier</span>
+          <span class="highlight-badge">🇵🇷 Puerto Rican National Wrestling Team</span>
+          <span class="highlight-badge">🎓 Full Athletic Scholarship</span>
+        </div>
+
+        <section class="service">
+          <h3 class="h3 service-title">What I Do</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="bulb-outline" style="font-size:30px;color:var(--orange-yellow-crayola);display:block;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Educational Innovation</h4>
+                <p class="service-item-text">Developing forward-thinking educational tools — including AI-powered rubrics for teachers — to modernize and improve learning outcomes across classrooms.</p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="rocket-outline" style="font-size:30px;color:var(--orange-yellow-crayola);display:block;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Entrepreneurship &amp; Startups</h4>
+                <p class="service-item-text">Supporting student and community entrepreneurs through Launch Chapel Hill — from marketing events to building summer accelerator programs that spark real economic growth.</p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="people-outline" style="font-size:30px;color:var(--orange-yellow-crayola);display:block;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Leadership &amp; Community</h4>
+                <p class="service-item-text">Leading the Student Athlete Speaker Series and serving on the SAAC committee — bridging the worlds of athletics and professional development for student athletes.</p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="calendar-outline" style="font-size:30px;color:var(--orange-yellow-crayola);display:block;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Event Management</h4>
+                <p class="service-item-text">200+ hours managing D1 events, ACC Championships, and NCAA Tournaments with UNC Event Management — delivering top-tier experiences from start to finish.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ======== RESUME ======== -->
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <a href="Sonny_Santiago_Resume.pdf" download="Sonny_Santiago_Resume.pdf" class="download-btn">
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </a>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University of North Carolina at Chapel Hill</h4>
+              <span>August 2024 – August 2026</span>
+              <p class="timeline-text">M.S. in Educational Innovation, Technology &amp; Entrepreneurship · Chapel Hill, NC</p>
+              <div class="timeline-text"><ul>
+                <li>Iron Ram Award 2025</li>
+                <li>ACC Honors List 2025</li>
+                <li>Partnered with Mark Cuban Foundation on AI Rubrics for teachers</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University of North Carolina at Chapel Hill</h4>
+              <span>August 2020 – May 2024</span>
+              <p class="timeline-text">B.S. in Sports Administration · Chapel Hill, NC</p>
+              <div class="timeline-text"><ul>
+                <li>ACC Honors List 2021</li>
+                <li>Full Athletic Scholarship</li>
+                <li>Won group sales challenge with overall revenue of $13,266</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">St. John Bosco</h4>
+              <span>August 2016 – May 2020</span>
+              <p class="timeline-text">High School Diploma · Bellflower, CA</p>
+              <div class="timeline-text"><ul>
+                <li>3x Scholar Athlete 2016–2019</li>
+                <li>4.0 GPA Honor Roll 2018</li>
+              </ul></div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Launch Chapel Hill — Intern</h4>
+              <span>August 2025 – Present · Chapel Hill, NC</span>
+              <div class="timeline-text"><ul>
+                <li>Serve students and members of the Triangle community with startup company support</li>
+                <li>Market Launch Chapel Hill events and UNC club meetings to drive economic aspirations</li>
+                <li>Promote and build a student startup accelerator program offered each summer</li>
+                <li>Lead Student Athlete Speaker Series introducing entrepreneurship to student athletes</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">UNC Wrestling — Volunteer Coach</h4>
+              <span>August 2025 – Present · Chapel Hill, NC</span>
+              <div class="timeline-text"><ul>
+                <li>Mentor student athletes through my experience as a Carolina athlete to improve their social, academic, and athletic experience</li>
+                <li>Share technical expertise from 17 years of wrestling experience with a diverse group of athletes</li>
+                <li>Encourage student athletes to put forth maximum effort and discipline to reach their full potential at UNC</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Hawthorne &amp; Wood — Support Staff</h4>
+              <span>June 2025 – Present · Chapel Hill, NC</span>
+              <div class="timeline-text"><ul>
+                <li>Provide fast service and productivity for the front of house team</li>
+                <li>Maintain exceptional service standards for all customers</li>
+                <li>Support team by anticipating needs and quickly resolving issues</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">UNC Event Management — Intern</h4>
+              <span>May – August 2024 · Chapel Hill, NC</span>
+              <div class="timeline-text"><ul>
+                <li>Helped run Division I events smoothly through hands-on event support</li>
+                <li>Worked with managers to maintain high operational standards</li>
+                <li>Assisted in 200+ hours of D1 events, ACC Championships, and NCAA Tournaments</li>
+              </ul></div>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">UNC Student Stores — Cashier / General Merchandise</h4>
+              <span>June 2022 – June 2023 · Chapel Hill, NC</span>
+              <div class="timeline-text"><ul>
+                <li>Handled customer transactions efficiently in a fast-paced retail setting</li>
+                <li>Assisted with merchandise displays to maximize visibility and sales</li>
+                <li>Provided friendly, helpful service to enhance the customer experience</li>
+              </ul></div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="trophy-outline"></ion-icon></div>
+            <h3 class="h3">Extracurriculars</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">UNC Wrestling Team</h4>
+              <span>2020 – 2025</span>
+              <p class="timeline-text">2x D1 NCAA Tournament Qualifier</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Puerto Rican Senior National Wrestling Team</h4>
+              <span>2023 – 2025</span>
+              <p class="timeline-text">Represented Puerto Rico in international competition</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Richard A. Baddour Carolina Veterans Leadership Academy</h4>
+              <span>2024 – 2025</span>
+              <p class="timeline-text">Leadership development program for student athletes at UNC</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Student Athlete Advisory Committee (SAAC)</h4>
+              <span>2024 – 2025</span>
+              <p class="timeline-text">Advocating for student athlete interests at the university level</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">Skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="skill">
+                <div class="title-wrapper"><h5 class="h5">Leadership &amp; Project Management</h5><data value="90">90%</data></div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width:90%;"></div></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="skill">
+                <div class="title-wrapper"><h5 class="h5">Event Management</h5><data value="85">85%</data></div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width:85%;"></div></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="skill">
+                <div class="title-wrapper"><h5 class="h5">Customer Service &amp; Interpersonal</h5><data value="95">95%</data></div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width:95%;"></div></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="skill">
+                <div class="title-wrapper"><h5 class="h5">Educational Technology</h5><data value="80">80%</data></div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width:80%;"></div></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="skill">
+                <div class="title-wrapper"><h5 class="h5">Entrepreneurship &amp; Marketing</h5><data value="78">78%</data></div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width:78%;"></div></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ======== PORTFOLIO ======== -->
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+        <section>
+          <!-- Mobile filter -->
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>All</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Education</button></li>
+              <li class="select-item"><button data-select-item>Entrepreneurship</button></li>
+            </ul>
+          </div>
+          <!-- Desktop filter -->
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Education</button></li>
+            <li class="filter-item"><button data-filter-btn>Entrepreneurship</button></li>
+          </ul>
+
+          <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="education">
+              <a href="https://www.figma.com/proto/uttLkipr4ZduqPsQEioxBA/Promptly-Prototype?node-id=201-366&starting-point-node-id=201%3A366&t=TBOFr1ab0HTNq4dT-1" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(270,30%,12%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="game-controller-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:20px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Prompt.ly</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Gamified AI prompting tool helping students learn to effectively communicate with AI</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">EdTech</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Gamification</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">AI Literacy</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Prompt.ly</h3>
+                <p class="project-category">Education · Gamified AI Prompting Tool</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="education">
+              <a href="https://www.figma.com/proto/eAauxiZI1p3hgGVlBjt0v2/Untitled?node-id=1-52&starting-point-node-id=1%3A16&t=dwPIqjiLFhHJZGH8-1" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(210,30%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="heart-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:20px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Elder.li</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">App designed for elders to track medication, set reminders, build community &amp; connect with health providers</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">HealthTech</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">UX Design</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Community</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Elder.li</h3>
+                <p class="project-category">Education · Elder Health &amp; Community App</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAG5WFm3cfs/9fU3-pecbvrbvBAZMBeXZA/edit?utm_content=DAG5WFm3cfs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(130,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="storefront-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:17px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Food Connect</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Business pitch connecting Chapel Hill restaurants with local food pantries to deliver donations and feed the community</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Social Impact</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Business Pitch</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Community</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Chapel Hill Food Connect</h3>
+                <p class="project-category">Entrepreneurship · Restaurant &amp; Food Pantry Network</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAG7lTfwfOQ/RA4S-8U8MG0EkNt4nQ1cMA/edit?utm_content=DAG7lTfwfOQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(290,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="mic-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Athletes in Entrepreneurship</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Launch Chapel Hill speaker series connecting entrepreneurs with student athletes to introduce careers in entrepreneurship</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Speaker Series</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Athletics</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Leadership</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Athletes in Entrepreneurship</h3>
+                <p class="project-category">Entrepreneurship · Launch Chapel Hill Speaker Series</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="education">
+              <a href="https://www.canva.com/design/DAGYMuQY4ms/GBfwY31-XAHF-naPQ5Qm7g/edit?utm_content=DAGYMuQY4ms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(220,25%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="bar-chart-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Online Learning Analysis</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Industry analysis of the online learning market featuring a deep dive into EdX and Coursera</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Industry Analysis</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">EdTech</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Research</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Online Learning Market Analysis</h3>
+                <p class="project-category">Education · EdX &amp; Coursera Industry Research</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="entrepreneurship">
+              <a href="https://www.canva.com/design/DAGKaHnKpa0/ebiOl8glXZsKkTF0dpyH2A/edit" target="_blank" rel="noopener">
+                <div class="project-img">
+                  <div class="project-img-inner" style="flex-direction:column;gap:8px;padding:24px;background:linear-gradient(135deg,hsl(240,2%,13%) 0%,hsl(20,20%,10%) 100%);">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <ion-icon name="calendar-outline" style="font-size:32px;color:var(--orange-yellow-crayola);display:block;flex-shrink:0;"></ion-icon>
+                      <span style="font-size:15px;font-weight:600;background:var(--text-gradient-yellow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">Event Management Internship</span>
+                    </div>
+                    <p style="color:var(--light-gray);font-size:11px;font-weight:300;text-align:center;line-height:1.5;">Summation of my UNC Event Management internship — 200+ hours of D1 events, ACC Championships &amp; NCAA Tournaments</p>
+                    <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;">
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">Event Management</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">D1 Sports</span>
+                      <span style="background:hsla(270,100%,72%,0.12);border:1px solid hsla(270,100%,72%,0.25);color:var(--orange-yellow-crayola);font-size:10px;padding:2px 8px;border-radius:20px;display:block;">UNC</span>
+                    </div>
+                  </div>
+                  <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                </div>
+                <h3 class="project-title">Event Management Internship</h3>
+                <p class="project-category">Entrepreneurship · UNC Internship Summation</p>
+              </a>
+            </li>
+
+          </ul>
+        </section>
+      </article>
+
+      <!-- ======== CONTACT ======== -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox">
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52155.29485065882!2d-79.08144559179688!3d35.91319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc2c8c90a2c9d%3A0x9d99d4b6b1fc1437!2sChapel%20Hill%2C%20NC!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+              width="400" height="300" loading="lazy" title="Chapel Hill NC map">
+            </iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+          <h3 class="h3 form-title">Send a Message</h3>
+          <form id="contactForm" novalidate>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full Name" required>
+              <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+            <button class="form-btn" type="submit">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+            <p class="form-msg" id="formMsg"></p>
+          </form>
+        </section>
+      </article>
+
+    </div>
+  </main>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Sidebar toggle
+    const sidebar = document.querySelector('[data-sidebar]');
+    const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+    sidebarBtn.addEventListener('click', () => sidebar.classList.toggle('active'));
+
+    // Page navigation
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    const articles = document.querySelectorAll('article[data-page]');
+
+    function navigateTo(target) {
+      articles.forEach(a => {
+        a.dataset.page === target ? a.classList.add('active') : a.classList.remove('active');
+      });
+      navLinks.forEach(l => {
+        l.textContent.trim().toLowerCase() === target
+          ? l.classList.add('active') : l.classList.remove('active');
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => navigateTo(link.textContent.trim().toLowerCase()));
+    });
+
+    // Portfolio filter — desktop
+    const filterBtns = document.querySelectorAll('[data-filter-btn]');
+    const projectItems = document.querySelectorAll('[data-filter-item]');
+    const selectValueEl = document.querySelector('[data-selecct-value]');
+
+    function applyFilter(val) {
+      projectItems.forEach(item => {
+        (val === 'all' || item.dataset.category.toLowerCase() === val)
+          ? item.classList.add('active')
+          : item.classList.remove('active');
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const val = btn.textContent.trim().toLowerCase();
+        applyFilter(val);
+        if (selectValueEl) selectValueEl.textContent = btn.textContent.trim();
+      });
+    });
+
+    // Portfolio filter — mobile
+    const filterSelect = document.querySelector('[data-select]');
+    const selectItems = document.querySelectorAll('[data-select-item]');
+
+    if (filterSelect) {
+      filterSelect.addEventListener('click', () => filterSelect.classList.toggle('active'));
+      selectItems.forEach(item => {
+        item.querySelector('button').addEventListener('click', () => {
+          const val = item.querySelector('button').textContent.trim().toLowerCase();
+          if (selectValueEl) selectValueEl.textContent = item.querySelector('button').textContent.trim();
+          filterSelect.classList.remove('active');
+          selectItems.forEach(i => i.querySelector('button').classList.remove('active'));
+          item.querySelector('button').classList.add('active');
+          applyFilter(val);
+          filterBtns.forEach(btn => {
+            btn.textContent.trim().toLowerCase() === val
+              ? btn.classList.add('active') : btn.classList.remove('active');
+          });
+        });
+      });
+    }
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = contactForm.fullname.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+      if (!name || !email || !message
